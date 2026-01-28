@@ -1,0 +1,261 @@
+version: '3.8'
+# =============================================================================
+# ADAPTIVE GUARDIAN - DOCKER COMPOSE CONFIGURATION
+# =============================================================================
+#
+# This compose file orchestrates all Adaptive Guardian services:
+# - Edge Agent (for simulation)
+# - Federated Learning Server
+# - MLOps Orchestrator
+# - Supporting services (PostgreSQL, Redis, Kafka, etc.)
+#
+# Usage:
+# docker-compose up -d # Start all services
+# docker-compose logs -f # View logs
+# docker-compose down # Stop all services
+# =============================================================================
+networks:
+  adaptive-guardian:
+    driver: bridge
+volumes:
+  postgres_data:
+  redis_data:
+  kafka_data:
+  mlflow_data:
+  grafana_data:
+  prometheus_data:
+services:
+  # ===========================================================================
+  # EDGE AGENT (for simulation and testing)
+  # ===========================================================================
+  edge-agent:
+    build:
+      context: .
+      dockerfile: build/docker/edge/Dockerfile
+    container_name: ag-edge-agent
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./data:/app/data
+      - ./models:/app/models
+    environment:
+      - MODEL_PATH=/app/models/best_model.pth
+      - SEQUENCE_LENGTH=100
+      - FEATURE_SIZE=6
+      - LOG_LEVEL=INFO
+    networks:
+      - adaptive-guardian
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8080/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+  # ===========================================================================
+  # FEDERATED LEARNING SERVER
+  # ===========================================================================
+  federated-server:
+    build:
+      context: .
+      dockerfile: build/docker/cloud/Dockerfile
+      args:
+        SERVICE: federated
+    container_name: ag-federated-server
+    ports:
+      - "8000:8000"
+    volumes:
+      - ./models:/app/models
+      - ./checkpoints:/app/checkpoints
+    environment:
+      - SERVER_HOST=0.0.0.0
+      - SERVER_PORT=8000
+      - DATABASE_URL=postgresql://adaptive:guardian@postgres:5432/adaptive_guardian
+      - REDIS_URL=redis://redis:6379/0
+      - NUM_CLIENTS=10
+      - CLIENTS_PER_ROUND=3
+      - USE_SECURE_AGG=true
+    depends_on:
+      - postgres
+      - redis
+    networks:
+      - adaptive-guardian
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "curl", "-f", "http://localhost:8000/health"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+  # ===========================================================================
+  # MLOPS ORCHESTRATOR
+  # ===========================================================================
+  mlops-orchestrator:
+    build:
+      context: .
+      dockerfile: build/docker/cloud/Dockerfile
+      args:
+        SERVICE: orchestrator
+    container_name: ag-mlops-orchestrator
+    ports:
+      - "8081:8081"
+    volumes:
+      - ./models:/app/models
+      - ./deployments:/app/deployments
+    environment:
+      - MLFLOW_TRACKING_URI=http://mlflow:5000
+      - PREFECT_API_URL=http://prefect:4200
+      - DATABASE_URL=postgresql://adaptive:guardian@postgres:5432/adaptive_guardian
+    depends_on:
+      - postgres
+      - mlflow
+    networks:
+      - adaptive-guardian
+    restart: unless-stopped
+  # ===========================================================================
+  # DATABASE - PostgreSQL
+  # ===========================================================================
+  postgres:
+    image: postgres:15-alpine
+    container_name: ag-postgres
+    ports:
+      - "5432:5432"
+    environment:
+      - POSTGRES_USER=adaptive
+      - POSTGRES_PASSWORD=guardian
+      - POSTGRES_DB=adaptive_guardian
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    networks:
+      - adaptive-guardian
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U adaptive"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  # ===========================================================================
+  # CACHE - Redis
+  # ===========================================================================
+  redis:
+    image: redis:7-alpine
+    container_name: ag-redis
+    ports:
+      - "6379:6379"
+    volumes:
+      - redis_data:/data
+    networks:
+      - adaptive-guardian
+    restart: unless-stopped
+    healthcheck:
+      test: ["CMD", "redis-cli", "ping"]
+      interval: 10s
+      timeout: 5s
+      retries: 5
+  # ===========================================================================
+  # MESSAGE BROKER - Kafka
+  # ===========================================================================
+  kafka:
+    image: confluentinc/cp-kafka:7.4.0
+    container_name: ag-kafka
+    ports:
+      - "9092:9092"
+    environment:
+      - KAFKA_BROKER_ID=1
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - KAFKA_ADVERTISED_LISTENERS=PLAINTEXT://kafka:9092
+      - KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR=1
+    volumes:
+      - kafka_data:/var/lib/kafka/data
+    depends_on:
+      - zookeeper
+    networks:
+      - adaptive-guardian
+    restart: unless-stopped
+  zookeeper:
+    image: confluentinc/cp-zookeeper:7.4.0
+    container_name: ag-zookeeper
+    ports:
+      - "2181:2181"
+    environment:
+      - ZOOKEEPER_CLIENT_PORT=2181
+      - ZOOKEEPER_TICK_TIME=2000
+    networks:
+      - adaptive-guardian
+    restart: unless-stopped
+  # ===========================================================================
+  # MLFLOW - Experiment Tracking
+  # ===========================================================================
+  mlflow:
+    image: ghcr.io/mlflow/mlflow:v2.6.0
+    container_name: ag-mlflow
+    ports:
+      - "5000:5000"
+    command: >
+      mlflow server
+      --backend-store-uri postgresql://adaptive:guardian@postgres:5432/adaptive_guardian
+      --default-artifact-root /mlflow/artifacts
+      --host 0.0.0.0
+      --port 5000
+    volumes:
+      - mlflow_data:/mlflow
+    depends_on:
+      - postgres
+    networks:
+      - adaptive-guardian
+    restart: unless-stopped
+  # ===========================================================================
+  # MONITORING - Prometheus
+  # ===========================================================================
+  prometheus:
+    image: prom/prometheus:latest
+    container_name: ag-prometheus
+    ports:
+      - "9090:9090"
+    volumes:
+      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+      - prometheus_data:/prometheus
+    command:
+      - '--config.file=/etc/prometheus/prometheus.yml'
+      - '--storage.tsdb.path=/prometheus'
+      - '--web.console.libraries=/usr/share/prometheus/console_libraries'
+      - '--web.console.templates=/usr/share/prometheus/consoles'
+    networks:
+      - adaptive-guardian
+    restart: unless-stopped
+  # ===========================================================================
+  # MONITORING - Grafana
+  # ===========================================================================
+  grafana:
+    image: grafana/grafana:latest
+    container_name: ag-grafana
+    ports:
+      - "3000:3000"
+    environment:
+      - GF_SECURITY_ADMIN_USER=admin
+      - GF_SECURITY_ADMIN_PASSWORD=admin
+      - GF_USERS_ALLOW_SIGN_UP=false
+    volumes:
+      - grafana_data:/var/lib/grafana
+      - ./monitoring/grafana/dashboards:/etc/grafana/provisioning/dashboards
+      - ./monitoring/grafana/datasources:/etc/grafana/provisioning/datasources
+    depends_on:
+      - prometheus
+    networks:
+      - adaptive-guardian
+    restart: unless-stopped
+  # ===========================================================================
+  # VISUALIZATION - Jupyter Lab (for development)
+  # ===========================================================================
+  jupyter:
+    image: jupyter/scipy-notebook:latest
+    container_name: ag-jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./data:/home/jovyan/data
+      - ./models:/home/jovyan/models
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+    networks:
+      - adaptive-guardian
+    restart: unless-stopped
