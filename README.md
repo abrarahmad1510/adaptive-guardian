@@ -3,7 +3,7 @@
 <table>
 <tr>
 <td width="200">
-  <img src="https://img.icons8.com/fluency/240/000000/shield.png" alt="Adaptive Guardian" width="180">
+  <img src="https://chatgpt.com/s/m_697a0c71c6dc81918b4dc6e589c9f59c" alt="Adaptive Guardian" width="180">
 </td>
 <td>
   <h3>Proactive Security Orchestration for Software-Defined Vehicles - AI-Powered Threat Detection with Privacy-Preserving Federated Learning</h3>
