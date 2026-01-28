@@ -46,9 +46,6 @@ Adaptive Guardian is an open-source, enterprise-grade federated learning platfor
 Traditional automotive cybersecurity solutions rely on reactive signature-based detection that fails against zero-day attacks and struggles with the distributed nature of modern vehicles. Adaptive Guardian revolutionizes this approach by deploying AI-powered behavioral analysis directly at the edge, enabling real-time risk scoring with sub-10 millisecond latency while maintaining privacy through federated learning that keeps sensitive vehicle data on-device.
 
 Our platform serves automotive OEMs and Tier-1 suppliers deploying next-generation Software-Defined Vehicles, enabling them to detect threats 85% faster, reduce false positives by 67%, and maintain GDPR compliance through privacy-preserving machine learning. By combining edge-based Temporal Convolutional Networks (TCN) with fleet-wide federated learning, Adaptive Guardian provides both immediate local threat response and continuous improvement from collective fleet intelligence.
-
-Built for production deployment with enterprise-ready security, scalability, and compliance features, Adaptive Guardian processes millions of ECU telemetry events per second while maintaining the performance requirements of safety-critical automotive systems.
-
 ---
 
 ## The Problem
