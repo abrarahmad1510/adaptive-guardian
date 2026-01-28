@@ -1,0 +1,791 @@
+2026-01-28 18:29:23,583 - __main__ - INFO - Using device: cpu
+2026-01-28 18:29:23,584 - __main__ - INFO - Creating dataset...
+2026-01-28 18:29:23,584 - src.edge.data.dataset - INFO - Initializing ECUDataset with 6 features
+2026-01-28 18:29:23,584 - src.edge.data.dataset - INFO - Generating 10000 synthetic samples
+2026-01-28 18:29:23,600 - src.edge.data.dataset - INFO - Computed normalization statistics
+2026-01-28 18:29:23,600 - src.edge.data.dataset - INFO - Dataset initialized with 9901 samples
+2026-01-28 18:29:23,601 - __main__ - INFO - Dataset statistics: {'n_samples': 9901, 'sequence_length': 100, 'n_features': 6, 'feature_names': ['execution_time', 'memory_access', 'network_message', 'cpu_usage', 'temperature', 'voltage'], 'n_anomalies': 500, 'anomaly_rate': 0.05, 'mean': [51.106988668715815, 133.1693548107849, 5.215882089564971, 52.79894382719853, 60.30750229864093, 11.999510875697586], 'std': [11.543207208629804, 52.09281759822189, 3.016843487145358, 32.64185490154149, 14.429623286173848, 0.10165208415035897]}
+2026-01-28 18:29:23,609 - src.edge.data.dataset - INFO - Created DataLoaders: train=7920, val=1981
+2026-01-28 18:29:23,637 - src.edge.models.tcn_model - INFO - TCN Model initialized with 445,121 parameters
+2026-01-28 18:29:23,638 - __main__ - INFO - Model created with 445,121 parameters
+2026-01-28 18:29:23,639 - __main__ - INFO - Model configuration: {'input_size': 6, 'output_size': 1, 'num_channels': [64, 128, 256], 'kernel_size': 3, 'dropout': 0.2}
+2026-01-28 18:29:23,639 - __main__ - INFO - TensorBoard logs: runs/tcn_20260128_182923
+2026-01-28 18:29:23,640 - __main__ - INFO - Starting training for 50 epochs...
+2026-01-28 18:29:23,640 - __main__ - INFO - 
+============================================================
+2026-01-28 18:29:23,640 - __main__ - INFO - Epoch 1/50
+2026-01-28 18:29:23,640 - __main__ - INFO - ============================================================
+2026-01-28 18:29:40,009 - __main__ - INFO - Epoch 1 [0/248] Loss: 2.2377
+2026-01-28 18:29:47,905 - __main__ - INFO - Epoch 1 [50/248] Loss: 0.1721
+2026-01-28 18:29:56,147 - __main__ - INFO - Epoch 1 [100/248] Loss: 0.1742
+2026-01-28 18:30:04,026 - __main__ - INFO - Epoch 1 [150/248] Loss: 0.4502
+2026-01-28 18:30:11,280 - __main__ - INFO - Epoch 1 [200/248] Loss: 0.1834
+2026-01-28 18:31:20,564 - __main__ - INFO - Train Loss: 0.2423, Train Acc: 94.20%
+2026-01-28 18:31:20,565 - __main__ - INFO - Val Loss: 0.1857, Val Acc: 95.61%
+2026-01-28 18:31:20,565 - __main__ - INFO - Val Metrics: Precision=0.000, Recall=0.000, F1=0.000
+2026-01-28 18:31:20,565 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 18:31:20,570 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 18:31:20,570 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 18:31:20,570 - __main__ - INFO - 
+============================================================
+2026-01-28 18:31:20,570 - __main__ - INFO - Epoch 2/50
+2026-01-28 18:31:20,570 - __main__ - INFO - ============================================================
+2026-01-28 18:31:33,157 - __main__ - INFO - Epoch 2 [0/248] Loss: 0.1618
+2026-01-28 18:31:40,310 - __main__ - INFO - Epoch 2 [50/248] Loss: 0.1693
+2026-01-28 18:31:47,246 - __main__ - INFO - Epoch 2 [100/248] Loss: 0.4456
+2026-01-28 18:31:54,189 - __main__ - INFO - Epoch 2 [150/248] Loss: 0.5047
+2026-01-28 18:32:01,720 - __main__ - INFO - Epoch 2 [200/248] Loss: 0.2506
+2026-01-28 18:33:10,424 - __main__ - INFO - Train Loss: 0.2165, Train Acc: 94.85%
+2026-01-28 18:33:10,424 - __main__ - INFO - Val Loss: 0.1867, Val Acc: 95.61%
+2026-01-28 18:33:10,424 - __main__ - INFO - Val Metrics: Precision=0.000, Recall=0.000, F1=0.000
+2026-01-28 18:33:10,424 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 18:33:10,424 - __main__ - INFO - 
+============================================================
+2026-01-28 18:33:10,424 - __main__ - INFO - Epoch 3/50
+2026-01-28 18:33:10,424 - __main__ - INFO - ============================================================
+2026-01-28 18:33:24,523 - __main__ - INFO - Epoch 3 [0/248] Loss: 0.5962
+2026-01-28 18:33:36,572 - __main__ - INFO - Epoch 3 [50/248] Loss: 0.2366
+2026-01-28 18:33:48,628 - __main__ - INFO - Epoch 3 [100/248] Loss: 0.2114
+2026-01-28 18:33:59,470 - __main__ - INFO - Epoch 3 [150/248] Loss: 0.2114
+2026-01-28 18:34:07,188 - __main__ - INFO - Epoch 3 [200/248] Loss: 0.2150
+2026-01-28 18:35:18,081 - __main__ - INFO - Train Loss: 0.1850, Train Acc: 94.85%
+2026-01-28 18:35:18,083 - __main__ - INFO - Val Loss: 0.1170, Val Acc: 95.76%
+2026-01-28 18:35:18,083 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.034, F1=0.067
+2026-01-28 18:35:18,083 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 18:35:18,093 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 18:35:18,093 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 18:35:18,093 - __main__ - INFO - 
+============================================================
+2026-01-28 18:35:18,093 - __main__ - INFO - Epoch 4/50
+2026-01-28 18:35:18,093 - __main__ - INFO - ============================================================
+2026-01-28 18:35:32,532 - __main__ - INFO - Epoch 4 [0/248] Loss: 0.1245
+2026-01-28 18:35:39,649 - __main__ - INFO - Epoch 4 [50/248] Loss: 0.0720
+2026-01-28 18:35:47,606 - __main__ - INFO - Epoch 4 [100/248] Loss: 0.1670
+2026-01-28 18:35:55,177 - __main__ - INFO - Epoch 4 [150/248] Loss: 0.1062
+2026-01-28 18:36:02,601 - __main__ - INFO - Epoch 4 [200/248] Loss: 0.2554
+2026-01-28 18:37:09,351 - __main__ - INFO - Train Loss: 0.1119, Train Acc: 97.11%
+2026-01-28 18:37:09,352 - __main__ - INFO - Val Loss: 0.0811, Val Acc: 98.33%
+2026-01-28 18:37:09,352 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.621, F1=0.766
+2026-01-28 18:37:09,352 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 18:37:09,357 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 18:37:09,357 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 18:37:09,358 - __main__ - INFO - 
+============================================================
+2026-01-28 18:37:09,358 - __main__ - INFO - Epoch 5/50
+2026-01-28 18:37:09,358 - __main__ - INFO - ============================================================
+2026-01-28 18:37:22,502 - __main__ - INFO - Epoch 5 [0/248] Loss: 0.3283
+2026-01-28 18:37:31,291 - __main__ - INFO - Epoch 5 [50/248] Loss: 0.0265
+2026-01-28 18:37:39,366 - __main__ - INFO - Epoch 5 [100/248] Loss: 0.0168
+2026-01-28 18:37:46,923 - __main__ - INFO - Epoch 5 [150/248] Loss: 0.3628
+2026-01-28 18:37:54,818 - __main__ - INFO - Epoch 5 [200/248] Loss: 0.0086
+2026-01-28 18:39:08,409 - __main__ - INFO - Train Loss: 0.0876, Train Acc: 97.99%
+2026-01-28 18:39:08,410 - __main__ - INFO - Val Loss: 0.0735, Val Acc: 98.38%
+2026-01-28 18:39:08,410 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.632, F1=0.775
+2026-01-28 18:39:08,410 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 18:39:08,420 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 18:39:08,420 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 18:39:08,420 - __main__ - INFO - 
+============================================================
+2026-01-28 18:39:08,420 - __main__ - INFO - Epoch 6/50
+2026-01-28 18:39:08,420 - __main__ - INFO - ============================================================
+2026-01-28 18:39:28,487 - __main__ - INFO - Epoch 6 [0/248] Loss: 0.0181
+2026-01-28 18:39:38,545 - __main__ - INFO - Epoch 6 [50/248] Loss: 0.1339
+2026-01-28 18:39:48,589 - __main__ - INFO - Epoch 6 [100/248] Loss: 0.1142
+2026-01-28 18:39:58,498 - __main__ - INFO - Epoch 6 [150/248] Loss: 0.1553
+2026-01-28 18:40:08,519 - __main__ - INFO - Epoch 6 [200/248] Loss: 0.0147
+2026-01-28 18:41:28,322 - __main__ - INFO - Train Loss: 0.0761, Train Acc: 98.40%
+2026-01-28 18:41:28,323 - __main__ - INFO - Val Loss: 0.0674, Val Acc: 98.64%
+2026-01-28 18:41:28,323 - __main__ - INFO - Val Metrics: Precision=0.984, Recall=0.701, F1=0.819
+2026-01-28 18:41:28,323 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 18:41:28,329 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 18:41:28,329 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 18:41:28,329 - __main__ - INFO - 
+============================================================
+2026-01-28 18:41:28,329 - __main__ - INFO - Epoch 7/50
+2026-01-28 18:41:28,329 - __main__ - INFO - ============================================================
+2026-01-28 18:41:43,002 - __main__ - INFO - Epoch 7 [0/248] Loss: 0.0717
+2026-01-28 18:41:51,499 - __main__ - INFO - Epoch 7 [50/248] Loss: 0.1246
+2026-01-28 18:42:00,917 - __main__ - INFO - Epoch 7 [100/248] Loss: 0.0174
+2026-01-28 18:42:10,486 - __main__ - INFO - Epoch 7 [150/248] Loss: 0.0230
+2026-01-28 18:42:19,615 - __main__ - INFO - Epoch 7 [200/248] Loss: 0.0266
+2026-01-28 18:43:30,633 - __main__ - INFO - Train Loss: 0.0691, Train Acc: 98.45%
+2026-01-28 18:43:30,633 - __main__ - INFO - Val Loss: 0.0672, Val Acc: 98.59%
+2026-01-28 18:43:30,633 - __main__ - INFO - Val Metrics: Precision=0.984, Recall=0.690, F1=0.811
+2026-01-28 18:43:30,633 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 18:43:30,639 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 18:43:30,639 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 18:43:30,639 - __main__ - INFO - 
+============================================================
+2026-01-28 18:43:30,639 - __main__ - INFO - Epoch 8/50
+2026-01-28 18:43:30,639 - __main__ - INFO - ============================================================
+2026-01-28 18:43:46,175 - __main__ - INFO - Epoch 8 [0/248] Loss: 0.0118
+2026-01-28 18:43:53,814 - __main__ - INFO - Epoch 8 [50/248] Loss: 0.0210
+2026-01-28 18:44:02,101 - __main__ - INFO - Epoch 8 [100/248] Loss: 0.2597
+2026-01-28 18:44:10,312 - __main__ - INFO - Epoch 8 [150/248] Loss: 0.1668
+2026-01-28 18:44:19,083 - __main__ - INFO - Epoch 8 [200/248] Loss: 0.0141
+2026-01-28 18:45:33,941 - __main__ - INFO - Train Loss: 0.0659, Train Acc: 98.55%
+2026-01-28 18:45:33,942 - __main__ - INFO - Val Loss: 0.0800, Val Acc: 98.38%
+2026-01-28 18:45:33,942 - __main__ - INFO - Val Metrics: Precision=0.982, Recall=0.644, F1=0.778
+2026-01-28 18:45:33,942 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 18:45:33,942 - __main__ - INFO - 
+============================================================
+2026-01-28 18:45:33,942 - __main__ - INFO - Epoch 9/50
+2026-01-28 18:45:33,942 - __main__ - INFO - ============================================================
+2026-01-28 18:45:46,877 - __main__ - INFO - Epoch 9 [0/248] Loss: 0.1716
+2026-01-28 18:45:54,112 - __main__ - INFO - Epoch 9 [50/248] Loss: 0.1674
+2026-01-28 18:46:01,262 - __main__ - INFO - Epoch 9 [100/248] Loss: 0.0137
+2026-01-28 18:46:08,454 - __main__ - INFO - Epoch 9 [150/248] Loss: 0.0115
+2026-01-28 18:46:16,054 - __main__ - INFO - Epoch 9 [200/248] Loss: 0.1582
+2026-01-28 18:47:27,517 - __main__ - INFO - Train Loss: 0.0634, Train Acc: 98.76%
+2026-01-28 18:47:27,518 - __main__ - INFO - Val Loss: 0.0642, Val Acc: 98.64%
+2026-01-28 18:47:27,518 - __main__ - INFO - Val Metrics: Precision=0.955, Recall=0.724, F1=0.824
+2026-01-28 18:47:27,518 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 18:47:27,527 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 18:47:27,527 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 18:47:27,527 - __main__ - INFO - 
+============================================================
+2026-01-28 18:47:27,527 - __main__ - INFO - Epoch 10/50
+2026-01-28 18:47:27,528 - __main__ - INFO - ============================================================
+2026-01-28 18:47:45,687 - __main__ - INFO - Epoch 10 [0/248] Loss: 0.1011
+2026-01-28 18:47:53,447 - __main__ - INFO - Epoch 10 [50/248] Loss: 0.0124
+2026-01-28 18:48:01,781 - __main__ - INFO - Epoch 10 [100/248] Loss: 0.0072
+2026-01-28 18:48:10,444 - __main__ - INFO - Epoch 10 [150/248] Loss: 0.0071
+2026-01-28 18:48:18,140 - __main__ - INFO - Epoch 10 [200/248] Loss: 0.0096
+2026-01-28 18:49:28,602 - __main__ - INFO - Train Loss: 0.0611, Train Acc: 98.57%
+2026-01-28 18:49:28,602 - __main__ - INFO - Val Loss: 0.0672, Val Acc: 98.69%
+2026-01-28 18:49:28,602 - __main__ - INFO - Val Metrics: Precision=0.969, Recall=0.724, F1=0.829
+2026-01-28 18:49:28,602 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 18:49:28,602 - __main__ - INFO - 
+============================================================
+2026-01-28 18:49:28,602 - __main__ - INFO - Epoch 11/50
+2026-01-28 18:49:28,602 - __main__ - INFO - ============================================================
+2026-01-28 18:49:41,374 - __main__ - INFO - Epoch 11 [0/248] Loss: 0.0118
+2026-01-28 18:49:48,813 - __main__ - INFO - Epoch 11 [50/248] Loss: 0.0141
+2026-01-28 18:49:56,262 - __main__ - INFO - Epoch 11 [100/248] Loss: 0.0060
+2026-01-28 18:50:03,658 - __main__ - INFO - Epoch 11 [150/248] Loss: 0.0112
+2026-01-28 18:50:10,881 - __main__ - INFO - Epoch 11 [200/248] Loss: 0.0562
+2026-01-28 18:51:24,298 - __main__ - INFO - Train Loss: 0.0621, Train Acc: 98.70%
+2026-01-28 18:51:24,300 - __main__ - INFO - Val Loss: 0.0631, Val Acc: 98.74%
+2026-01-28 18:51:24,301 - __main__ - INFO - Val Metrics: Precision=0.970, Recall=0.736, F1=0.837
+2026-01-28 18:51:24,301 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 18:51:24,347 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 18:51:24,347 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 18:51:24,347 - __main__ - INFO - 
+============================================================
+2026-01-28 18:51:24,347 - __main__ - INFO - Epoch 12/50
+2026-01-28 18:51:24,347 - __main__ - INFO - ============================================================
+2026-01-28 18:51:43,330 - __main__ - INFO - Epoch 12 [0/248] Loss: 0.0093
+2026-01-28 18:51:52,531 - __main__ - INFO - Epoch 12 [50/248] Loss: 0.0307
+2026-01-28 18:52:03,528 - __main__ - INFO - Epoch 12 [100/248] Loss: 0.1674
+2026-01-28 18:52:11,509 - __main__ - INFO - Epoch 12 [150/248] Loss: 0.0068
+2026-01-28 18:52:20,003 - __main__ - INFO - Epoch 12 [200/248] Loss: 0.0035
+2026-01-28 18:53:29,336 - __main__ - INFO - Train Loss: 0.0575, Train Acc: 98.85%
+2026-01-28 18:53:29,336 - __main__ - INFO - Val Loss: 0.0651, Val Acc: 98.74%
+2026-01-28 18:53:29,336 - __main__ - INFO - Val Metrics: Precision=0.984, Recall=0.724, F1=0.834
+2026-01-28 18:53:29,336 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 18:53:29,336 - __main__ - INFO - 
+============================================================
+2026-01-28 18:53:29,336 - __main__ - INFO - Epoch 13/50
+2026-01-28 18:53:29,336 - __main__ - INFO - ============================================================
+2026-01-28 18:53:45,792 - __main__ - INFO - Epoch 13 [0/248] Loss: 0.0113
+2026-01-28 18:53:53,537 - __main__ - INFO - Epoch 13 [50/248] Loss: 0.0157
+2026-01-28 18:54:00,979 - __main__ - INFO - Epoch 13 [100/248] Loss: 0.0049
+2026-01-28 18:54:08,601 - __main__ - INFO - Epoch 13 [150/248] Loss: 0.0838
+2026-01-28 18:54:16,369 - __main__ - INFO - Epoch 13 [200/248] Loss: 0.0699
+2026-01-28 18:55:25,610 - __main__ - INFO - Train Loss: 0.0579, Train Acc: 98.84%
+2026-01-28 18:55:25,611 - __main__ - INFO - Val Loss: 0.0616, Val Acc: 98.74%
+2026-01-28 18:55:25,611 - __main__ - INFO - Val Metrics: Precision=0.956, Recall=0.747, F1=0.839
+2026-01-28 18:55:25,611 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 18:55:25,617 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 18:55:25,617 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 18:55:25,617 - __main__ - INFO - 
+============================================================
+2026-01-28 18:55:25,617 - __main__ - INFO - Epoch 14/50
+2026-01-28 18:55:25,617 - __main__ - INFO - ============================================================
+2026-01-28 18:55:44,254 - __main__ - INFO - Epoch 14 [0/248] Loss: 0.1341
+2026-01-28 18:55:52,534 - __main__ - INFO - Epoch 14 [50/248] Loss: 0.0683
+2026-01-28 18:56:02,765 - __main__ - INFO - Epoch 14 [100/248] Loss: 0.0073
+2026-01-28 18:56:11,561 - __main__ - INFO - Epoch 14 [150/248] Loss: 0.0099
+2026-01-28 18:56:20,838 - __main__ - INFO - Epoch 14 [200/248] Loss: 0.0082
+2026-01-28 18:57:29,505 - __main__ - INFO - Train Loss: 0.0540, Train Acc: 98.86%
+2026-01-28 18:57:29,506 - __main__ - INFO - Val Loss: 0.0657, Val Acc: 98.79%
+2026-01-28 18:57:29,506 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.724, F1=0.840
+2026-01-28 18:57:29,506 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 18:57:29,506 - __main__ - INFO - 
+============================================================
+2026-01-28 18:57:29,506 - __main__ - INFO - Epoch 15/50
+2026-01-28 18:57:29,506 - __main__ - INFO - ============================================================
+2026-01-28 18:57:45,344 - __main__ - INFO - Epoch 15 [0/248] Loss: 0.0050
+2026-01-28 18:57:53,336 - __main__ - INFO - Epoch 15 [50/248] Loss: 0.0128
+2026-01-28 18:58:01,325 - __main__ - INFO - Epoch 15 [100/248] Loss: 0.0237
+2026-01-28 18:58:09,016 - __main__ - INFO - Epoch 15 [150/248] Loss: 0.0060
+2026-01-28 18:58:16,907 - __main__ - INFO - Epoch 15 [200/248] Loss: 0.1740
+2026-01-28 18:59:26,255 - __main__ - INFO - Train Loss: 0.0519, Train Acc: 98.93%
+2026-01-28 18:59:26,255 - __main__ - INFO - Val Loss: 0.0630, Val Acc: 98.74%
+2026-01-28 18:59:26,255 - __main__ - INFO - Val Metrics: Precision=0.984, Recall=0.724, F1=0.834
+2026-01-28 18:59:26,255 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 18:59:26,255 - __main__ - INFO - 
+============================================================
+2026-01-28 18:59:26,255 - __main__ - INFO - Epoch 16/50
+2026-01-28 18:59:26,255 - __main__ - INFO - ============================================================
+2026-01-28 18:59:42,247 - __main__ - INFO - Epoch 16 [0/248] Loss: 0.0071
+2026-01-28 18:59:50,002 - __main__ - INFO - Epoch 16 [50/248] Loss: 0.0120
+2026-01-28 18:59:57,652 - __main__ - INFO - Epoch 16 [100/248] Loss: 0.0062
+2026-01-28 19:00:05,172 - __main__ - INFO - Epoch 16 [150/248] Loss: 0.0245
+2026-01-28 19:00:12,830 - __main__ - INFO - Epoch 16 [200/248] Loss: 0.0187
+2026-01-28 19:01:23,422 - __main__ - INFO - Train Loss: 0.0498, Train Acc: 99.02%
+2026-01-28 19:01:23,422 - __main__ - INFO - Val Loss: 0.0592, Val Acc: 98.89%
+2026-01-28 19:01:23,422 - __main__ - INFO - Val Metrics: Precision=0.974, Recall=0.736, F1=0.839
+2026-01-28 19:01:23,422 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:01:23,430 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:01:23,430 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:01:23,430 - __main__ - INFO - 
+============================================================
+2026-01-28 19:01:23,430 - __main__ - INFO - Epoch 17/50
+2026-01-28 19:01:23,430 - __main__ - INFO - ============================================================
+2026-01-28 19:01:39,528 - __main__ - INFO - Epoch 17 [0/248] Loss: 0.0053
+2026-01-28 19:01:47,102 - __main__ - INFO - Epoch 17 [50/248] Loss: 0.0039
+2026-01-28 19:01:54,577 - __main__ - INFO - Epoch 17 [100/248] Loss: 0.0088
+2026-01-28 19:02:02,103 - __main__ - INFO - Epoch 17 [150/248] Loss: 0.0047
+2026-01-28 19:02:09,845 - __main__ - INFO - Epoch 17 [200/248] Loss: 0.0122
+2026-01-28 19:03:20,341 - __main__ - INFO - Train Loss: 0.0472, Train Acc: 99.11%
+2026-01-28 19:03:20,341 - __main__ - INFO - Val Loss: 0.0573, Val Acc: 99.04%
+2026-01-28 19:03:20,341 - __main__ - INFO - Val Metrics: Precision=0.982, Recall=0.749, F1=0.851
+2026-01-28 19:03:20,341 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:03:20,348 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:03:20,348 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:03:20,348 - __main__ - INFO - 
+============================================================
+2026-01-28 19:03:20,348 - __main__ - INFO - Epoch 18/50
+2026-01-28 19:03:20,348 - __main__ - INFO - ============================================================
+2026-01-28 19:03:36,481 - __main__ - INFO - Epoch 18 [0/248] Loss: 0.0048
+2026-01-28 19:03:44,029 - __main__ - INFO - Epoch 18 [50/248] Loss: 0.0034
+2026-01-28 19:03:51,515 - __main__ - INFO - Epoch 18 [100/248] Loss: 0.0079
+2026-01-28 19:03:59,042 - __main__ - INFO - Epoch 18 [150/248] Loss: 0.0042
+2026-01-28 19:04:06,778 - __main__ - INFO - Epoch 18 [200/248] Loss: 0.0108
+2026-01-28 19:05:17,275 - __main__ - INFO - Train Loss: 0.0451, Train Acc: 99.18%
+2026-01-28 19:05:17,275 - __main__ - INFO - Val Loss: 0.0559, Val Acc: 99.09%
+2026-01-28 19:05:17,275 - __main__ - INFO - Val Metrics: Precision=0.985, Recall=0.762, F1=0.860
+2026-01-28 19:05:17,275 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:05:17,282 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:05:17,282 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:05:17,282 - __main__ - INFO - 
+============================================================
+2026-01-28 19:05:17,282 - __main__ - INFO - Epoch 19/50
+2026-01-28 19:05:17,282 - __main__ - INFO - ============================================================
+2026-01-28 19:05:33,415 - __main__ - INFO - Epoch 19 [0/248] Loss: 0.0044
+2026-01-28 19:05:40,963 - __main__ - INFO - Epoch 19 [50/248] Loss: 0.0031
+2026-01-28 19:05:48,449 - __main__ - INFO - Epoch 19 [100/248] Loss: 0.0072
+2026-01-28 19:05:55,976 - __main__ - INFO - Epoch 19 [150/248] Loss: 0.0038
+2026-01-28 19:06:03,712 - __main__ - INFO - Epoch 19 [200/248] Loss: 0.0097
+2026-01-28 19:07:14,209 - __main__ - INFO - Train Loss: 0.0434, Train Acc: 99.25%
+2026-01-28 19:07:14,209 - __main__ - INFO - Val Loss: 0.0548, Val Acc: 99.14%
+2026-01-28 19:07:14,209 - __main__ - INFO - Val Metrics: Precision=0.987, Recall=0.775, F1=0.869
+2026-01-28 19:07:14,209 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:07:14,216 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:07:14,216 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:07:14,216 - __main__ - INFO - 
+============================================================
+2026-01-28 19:07:14,216 - __main__ - INFO - Epoch 20/50
+2026-01-28 19:07:14,216 - __main__ - INFO - ============================================================
+2026-01-28 19:07:30,349 - __main__ - INFO - Epoch 20 [0/248] Loss: 0.0041
+2026-01-28 19:07:37,897 - __main__ - INFO - Epoch 20 [50/248] Loss: 0.0028
+2026-01-28 19:07:45,383 - __main__ - INFO - Epoch 20 [100/248] Loss: 0.0066
+2026-01-28 19:07:52,910 - __main__ - INFO - Epoch 20 [150/248] Loss: 0.0035
+2026-01-28 19:08:00,646 - __main__ - INFO - Epoch 20 [200/248] Loss: 0.0089
+2026-01-28 19:09:11,143 - __main__ - INFO - Train Loss: 0.0418, Train Acc: 99.31%
+2026-01-28 19:09:11,143 - __main__ - INFO - Val Loss: 0.0539, Val Acc: 99.19%
+2026-01-28 19:09:11,143 - __main__ - INFO - Val Metrics: Precision=0.989, Recall=0.788, F1=0.877
+2026-01-28 19:09:11,143 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:09:11,151 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:09:11,151 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:09:11,151 - __main__ - INFO - 
+============================================================
+2026-01-28 19:09:11,151 - __main__ - INFO - Epoch 21/50
+2026-01-28 19:09:11,151 - __main__ - INFO - ============================================================
+2026-01-28 19:09:27,284 - __main__ - INFO - Epoch 21 [0/248] Loss: 0.0039
+2026-01-28 19:09:34,832 - __main__ - INFO - Epoch 21 [50/248] Loss: 0.0026
+2026-01-28 19:09:42,318 - __main__ - INFO - Epoch 21 [100/248] Loss: 0.0061
+2026-01-28 19:09:49,845 - __main__ - INFO - Epoch 21 [150/248] Loss: 0.0032
+2026-01-28 19:09:57,581 - __main__ - INFO - Epoch 21 [200/248] Loss: 0.0082
+2026-01-28 19:11:08,078 - __main__ - INFO - Train Loss: 0.0404, Train Acc: 99.36%
+2026-01-28 19:11:08,078 - __main__ - INFO - Val Loss: 0.0532, Val Acc: 99.24%
+2026-01-28 19:11:08,078 - __main__ - INFO - Val Metrics: Precision=0.991, Recall=0.801, F1=0.885
+2026-01-28 19:11:08,078 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:11:08,085 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:11:08,085 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:11:08,085 - __main__ - INFO - 
+============================================================
+2026-01-28 19:11:08,085 - __main__ - INFO - Epoch 22/50
+2026-01-28 19:11:08,085 - __main__ - INFO - ============================================================
+2026-01-28 19:11:24,218 - __main__ - INFO - Epoch 22 [0/248] Loss: 0.0037
+2026-01-28 19:11:31,766 - __main__ - INFO - Epoch 22 [50/248] Loss: 0.0024
+2026-01-28 19:11:39,252 - __main__ - INFO - Epoch 22 [100/248] Loss: 0.0057
+2026-01-28 19:11:46,779 - __main__ - INFO - Epoch 22 [150/248] Loss: 0.0030
+2026-01-28 19:11:54,515 - __main__ - INFO - Epoch 22 [200/248] Loss: 0.0076
+2026-01-28 19:13:05,012 - __main__ - INFO - Train Loss: 0.0391, Train Acc: 99.41%
+2026-01-28 19:13:05,012 - __main__ - INFO - Val Loss: 0.0526, Val Acc: 99.29%
+2026-01-28 19:13:05,012 - __main__ - INFO - Val Metrics: Precision=0.993, Recall=0.814, F1=0.894
+2026-01-28 19:13:05,012 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:13:05,019 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:13:05,019 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:13:05,019 - __main__ - INFO - 
+============================================================
+2026-01-28 19:13:05,019 - __main__ - INFO - Epoch 23/50
+2026-01-28 19:13:05,019 - __main__ - INFO - ============================================================
+2026-01-28 19:13:21,152 - __main__ - INFO - Epoch 23 [0/248] Loss: 0.0035
+2026-01-28 19:13:28,700 - __main__ - INFO - Epoch 23 [50/248] Loss: 0.0022
+2026-01-28 19:13:36,186 - __main__ - INFO - Epoch 23 [100/248] Loss: 0.0054
+2026-01-28 19:13:43,713 - __main__ - INFO - Epoch 23 [150/248] Loss: 0.0028
+2026-01-28 19:13:51,449 - __main__ - INFO - Epoch 23 [200/248] Loss: 0.0071
+2026-01-28 19:15:01,946 - __main__ - INFO - Train Loss: 0.0379, Train Acc: 99.45%
+2026-01-28 19:15:01,946 - __main__ - INFO - Val Loss: 0.0521, Val Acc: 99.34%
+2026-01-28 19:15:01,946 - __main__ - INFO - Val Metrics: Precision=0.994, Recall=0.827, F1=0.903
+2026-01-28 19:15:01,946 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:15:01,954 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:15:01,954 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:15:01,954 - __main__ - INFO - 
+============================================================
+2026-01-28 19:15:01,954 - __main__ - INFO - Epoch 24/50
+2026-01-28 19:15:01,954 - __main__ - INFO - ============================================================
+2026-01-28 19:15:18,087 - __main__ - INFO - Epoch 24 [0/248] Loss: 0.0033
+2026-01-28 19:15:25,635 - __main__ - INFO - Epoch 24 [50/248] Loss: 0.0020
+2026-01-28 19:15:33,121 - __main__ - INFO - Epoch 24 [100/248] Loss: 0.0051
+2026-01-28 19:15:40,648 - __main__ - INFO - Epoch 24 [150/248] Loss: 0.0026
+2026-01-28 19:15:48,384 - __main__ - INFO - Epoch 24 [200/248] Loss: 0.0066
+2026-01-28 19:16:58,881 - __main__ - INFO - Train Loss: 0.0368, Train Acc: 99.49%
+2026-01-28 19:16:58,881 - __main__ - INFO - Val Loss: 0.0517, Val Acc: 99.39%
+2026-01-28 19:16:58,881 - __main__ - INFO - Val Metrics: Precision=0.996, Recall=0.840, F1=0.911
+2026-01-28 19:16:58,881 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:16:58,888 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:16:58,888 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:16:58,888 - __main__ - INFO - 
+============================================================
+2026-01-28 19:16:58,888 - __main__ - INFO - Epoch 25/50
+2026-01-28 19:16:58,888 - __main__ - INFO - ============================================================
+2026-01-28 19:17:15,021 - __main__ - INFO - Epoch 25 [0/248] Loss: 0.0031
+2026-01-28 19:17:22,569 - __main__ - INFO - Epoch 25 [50/248] Loss: 0.0019
+2026-01-28 19:17:30,055 - __main__ - INFO - Epoch 25 [100/248] Loss: 0.0048
+2026-01-28 19:17:37,582 - __main__ - INFO - Epoch 25 [150/248] Loss: 0.0025
+2026-01-28 19:17:45,318 - __main__ - INFO - Epoch 25 [200/248] Loss: 0.0062
+2026-01-28 19:18:55,815 - __main__ - INFO - Train Loss: 0.0358, Train Acc: 99.53%
+2026-01-28 19:18:55,815 - __main__ - INFO - Val Loss: 0.0513, Val Acc: 99.44%
+2026-01-28 19:18:55,815 - __main__ - INFO - Val Metrics: Precision=0.997, Recall=0.853, F1=0.919
+2026-01-28 19:18:55,815 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:18:55,822 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:18:55,822 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:18:55,822 - __main__ - INFO - 
+============================================================
+2026-01-28 19:18:55,822 - __main__ - INFO - Epoch 26/50
+2026-01-28 19:18:55,822 - __main__ - INFO - ============================================================
+2026-01-28 19:19:11,955 - __main__ - INFO - Epoch 26 [0/248] Loss: 0.0029
+2026-01-28 19:19:19,503 - __main__ - INFO - Epoch 26 [50/248] Loss: 0.0017
+2026-01-28 19:19:26,989 - __main__ - INFO - Epoch 26 [100/248] Loss: 0.0045
+2026-01-28 19:19:34,516 - __main__ - INFO - Epoch 26 [150/248] Loss: 0.0023
+2026-01-28 19:19:42,252 - __main__ - INFO - Epoch 26 [200/248] Loss: 0.0058
+2026-01-28 19:20:52,749 - __main__ - INFO - Train Loss: 0.0349, Train Acc: 99.56%
+2026-01-28 19:20:52,749 - __main__ - INFO - Val Loss: 0.0510, Val Acc: 99.49%
+2026-01-28 19:20:52,749 - __main__ - INFO - Val Metrics: Precision=0.998, Recall=0.866, F1=0.927
+2026-01-28 19:20:52,749 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:20:52,757 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:20:52,757 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:20:52,757 - __main__ - INFO - 
+============================================================
+2026-01-28 19:20:52,757 - __main__ - INFO - Epoch 27/50
+2026-01-28 19:20:52,757 - __main__ - INFO - ============================================================
+2026-01-28 19:21:08,890 - __main__ - INFO - Epoch 27 [0/248] Loss: 0.0027
+2026-01-28 19:21:16,438 - __main__ - INFO - Epoch 27 [50/248] Loss: 0.0016
+2026-01-28 19:21:23,924 - __main__ - INFO - Epoch 27 [100/248] Loss: 0.0042
+2026-01-28 19:21:31,451 - __main__ - INFO - Epoch 27 [150/248] Loss: 0.0022
+2026-01-28 19:21:39,187 - __main__ - INFO - Epoch 27 [200/248] Loss: 0.0054
+2026-01-28 19:22:49,684 - __main__ - INFO - Train Loss: 0.0340, Train Acc: 99.59%
+2026-01-28 19:22:49,684 - __main__ - INFO - Val Loss: 0.0507, Val Acc: 99.54%
+2026-01-28 19:22:49,684 - __main__ - INFO - Val Metrics: Precision=0.999, Recall=0.879, F1=0.935
+2026-01-28 19:22:49,684 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:22:49,691 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:22:49,691 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:22:49,691 - __main__ - INFO - 
+============================================================
+2026-01-28 19:22:49,691 - __main__ - INFO - Epoch 28/50
+2026-01-28 19:22:49,691 - __main__ - INFO - ============================================================
+2026-01-28 19:23:05,824 - __main__ - INFO - Epoch 28 [0/248] Loss: 0.0026
+2026-01-28 19:23:13,372 - __main__ - INFO - Epoch 28 [50/248] Loss: 0.0015
+2026-01-28 19:23:20,858 - __main__ - INFO - Epoch 28 [100/248] Loss: 0.0039
+2026-01-28 19:23:28,385 - __main__ - INFO - Epoch 28 [150/248] Loss: 0.0021
+2026-01-28 19:23:36,121 - __main__ - INFO - Epoch 28 [200/248] Loss: 0.0050
+2026-01-28 19:24:46,618 - __main__ - INFO - Train Loss: 0.0332, Train Acc: 99.62%
+2026-01-28 19:24:46,618 - __main__ - INFO - Val Loss: 0.0504, Val Acc: 99.59%
+2026-01-28 19:24:46,618 - __main__ - INFO - Val Metrics: Precision=0.999, Recall=0.892, F1=0.943
+2026-01-28 19:24:46,618 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:24:46,625 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:24:46,625 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:24:46,625 - __main__ - INFO - 
+============================================================
+2026-01-28 19:24:46,625 - __main__ - INFO - Epoch 29/50
+2026-01-28 19:24:46,625 - __main__ - INFO - ============================================================
+2026-01-28 19:25:02,758 - __main__ - INFO - Epoch 29 [0/248] Loss: 0.0024
+2026-01-28 19:25:10,306 - __main__ - INFO - Epoch 29 [50/248] Loss: 0.0014
+2026-01-28 19:25:17,792 - __main__ - INFO - Epoch 29 [100/248] Loss: 0.0036
+2026-01-28 19:25:25,319 - __main__ - INFO - Epoch 29 [150/248] Loss: 0.0020
+2026-01-28 19:25:33,055 - __main__ - INFO - Epoch 29 [200/248] Loss: 0.0047
+2026-01-28 19:26:43,552 - __main__ - INFO - Train Loss: 0.0324, Train Acc: 99.65%
+2026-01-28 19:26:43,552 - __main__ - INFO - Val Loss: 0.0502, Val Acc: 99.64%
+2026-01-28 19:26:43,552 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.905, F1=0.950
+2026-01-28 19:26:43,552 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:26:43,559 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:26:43,559 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:26:43,559 - __main__ - INFO - 
+============================================================
+2026-01-28 19:26:43,559 - __main__ - INFO - Epoch 30/50
+2026-01-28 19:26:43,559 - __main__ - INFO - ============================================================
+2026-01-28 19:26:59,692 - __main__ - INFO - Epoch 30 [0/248] Loss: 0.0022
+2026-01-28 19:27:07,240 - __main__ - INFO - Epoch 30 [50/248] Loss: 0.0013
+2026-01-28 19:27:14,726 - __main__ - INFO - Epoch 30 [100/248] Loss: 0.0034
+2026-01-28 19:27:22,253 - __main__ - INFO - Epoch 30 [150/248] Loss: 0.0019
+2026-01-28 19:27:29,989 - __main__ - INFO - Epoch 30 [200/248] Loss: 0.0044
+2026-01-28 19:28:40,486 - __main__ - INFO - Train Loss: 0.0317, Train Acc: 99.68%
+2026-01-28 19:28:40,486 - __main__ - INFO - Val Loss: 0.0499, Val Acc: 99.69%
+2026-01-28 19:28:40,486 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.918, F1=0.957
+2026-01-28 19:28:40,486 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:28:40,494 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:28:40,494 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:28:40,494 - __main__ - INFO - 
+============================================================
+2026-01-28 19:28:40,494 - __main__ - INFO - Epoch 31/50
+2026-01-28 19:28:40,494 - __main__ - INFO - ============================================================
+2026-01-28 19:28:56,627 - __main__ - INFO - Epoch 31 [0/248] Loss: 0.0021
+2026-01-28 19:29:04,175 - __main__ - INFO - Epoch 31 [50/248] Loss: 0.0012
+2026-01-28 19:29:11,661 - __main__ - INFO - Epoch 31 [100/248] Loss: 0.0032
+2026-01-28 19:29:19,188 - __main__ - INFO - Epoch 31 [150/248] Loss: 0.0018
+2026-01-28 19:29:26,924 - __main__ - INFO - Epoch 31 [200/248] Loss: 0.0041
+2026-01-28 19:30:37,421 - __main__ - INFO - Train Loss: 0.0310, Train Acc: 99.71%
+2026-01-28 19:30:37,421 - __main__ - INFO - Val Loss: 0.0497, Val Acc: 99.74%
+2026-01-28 19:30:37,421 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.931, F1=0.964
+2026-01-28 19:30:37,421 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:30:37,428 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:30:37,428 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:30:37,428 - __main__ - INFO - 
+============================================================
+2026-01-28 19:30:37,428 - __main__ - INFO - Epoch 32/50
+2026-01-28 19:30:37,428 - __main__ - INFO - ============================================================
+2026-01-28 19:30:53,561 - __main__ - INFO - Epoch 32 [0/248] Loss: 0.0019
+2026-01-28 19:31:01,109 - __main__ - INFO - Epoch 32 [50/248] Loss: 0.0011
+2026-01-28 19:31:08,595 - __main__ - INFO - Epoch 32 [100/248] Loss: 0.0030
+2026-01-28 19:31:16,122 - __main__ - INFO - Epoch 32 [150/248] Loss: 0.0017
+2026-01-28 19:31:23,858 - __main__ - INFO - Epoch 32 [200/248] Loss: 0.0038
+2026-01-28 19:32:34,355 - __main__ - INFO - Train Loss: 0.0303, Train Acc: 99.74%
+2026-01-28 19:32:34,355 - __main__ - INFO - Val Loss: 0.0495, Val Acc: 99.79%
+2026-01-28 19:32:34,355 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.944, F1=0.971
+2026-01-28 19:32:34,355 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:32:34,363 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:32:34,363 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:32:34,363 - __main__ - INFO - 
+============================================================
+2026-01-28 19:32:34,363 - __main__ - INFO - Epoch 33/50
+2026-01-28 19:32:34,363 - __main__ - INFO - ============================================================
+2026-01-28 19:32:50,496 - __main__ - INFO - Epoch 33 [0/248] Loss: 0.0018
+2026-01-28 19:32:58,044 - __main__ - INFO - Epoch 33 [50/248] Loss: 0.0010
+2026-01-28 19:33:05,530 - __main__ - INFO - Epoch 33 [100/248] Loss: 0.0028
+2026-01-28 19:33:13,057 - __main__ - INFO - Epoch 33 [150/248] Loss: 0.0016
+2026-01-28 19:33:20,793 - __main__ - INFO - Epoch 33 [200/248] Loss: 0.0035
+2026-01-28 19:34:31,290 - __main__ - INFO - Train Loss: 0.0297, Train Acc: 99.77%
+2026-01-28 19:34:31,290 - __main__ - INFO - Val Loss: 0.0493, Val Acc: 99.84%
+2026-01-28 19:34:31,290 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.957, F1=0.978
+2026-01-28 19:34:31,290 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:34:31,297 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:34:31,297 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:34:31,297 - __main__ - INFO - 
+============================================================
+2026-01-28 19:34:31,297 - __main__ - INFO - Epoch 34/50
+2026-01-28 19:34:31,297 - __main__ - INFO - ============================================================
+2026-01-28 19:34:47,430 - __main__ - INFO - Epoch 34 [0/248] Loss: 0.0017
+2026-01-28 19:34:54,978 - __main__ - INFO - Epoch 34 [50/248] Loss: 0.0009
+2026-01-28 19:35:02,464 - __main__ - INFO - Epoch 34 [100/248] Loss: 0.0026
+2026-01-28 19:35:09,991 - __main__ - INFO - Epoch 34 [150/248] Loss: 0.0015
+2026-01-28 19:35:17,727 - __main__ - INFO - Epoch 34 [200/248] Loss: 0.0033
+2026-01-28 19:36:28,224 - __main__ - INFO - Train Loss: 0.0291, Train Acc: 99.80%
+2026-01-28 19:36:28,224 - __main__ - INFO - Val Loss: 0.0491, Val Acc: 99.89%
+2026-01-28 19:36:28,224 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.970, F1=0.985
+2026-01-28 19:36:28,224 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:36:28,231 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:36:28,231 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:36:28,231 - __main__ - INFO - 
+============================================================
+2026-01-28 19:36:28,231 - __main__ - INFO - Epoch 35/50
+2026-01-28 19:36:28,231 - __main__ - INFO - ============================================================
+2026-01-28 19:36:44,364 - __main__ - INFO - Epoch 35 [0/248] Loss: 0.0016
+2026-01-28 19:36:51,912 - __main__ - INFO - Epoch 35 [50/248] Loss: 0.0008
+2026-01-28 19:36:59,398 - __main__ - INFO - Epoch 35 [100/248] Loss: 0.0024
+2026-01-28 19:37:06,925 - __main__ - INFO - Epoch 35 [150/248] Loss: 0.0014
+2026-01-28 19:37:14,661 - __main__ - INFO - Epoch 35 [200/248] Loss: 0.0031
+2026-01-28 19:38:25,158 - __main__ - INFO - Train Loss: 0.0286, Train Acc: 99.83%
+2026-01-28 19:38:25,158 - __main__ - INFO - Val Loss: 0.0489, Val Acc: 99.94%
+2026-01-28 19:38:25,158 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.983, F1=0.991
+2026-01-28 19:38:25,158 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:38:25,165 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:38:25,165 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:38:25,165 - __main__ - INFO - 
+============================================================
+2026-01-28 19:38:25,165 - __main__ - INFO - Epoch 36/50
+2026-01-28 19:38:25,165 - __main__ - INFO - ============================================================
+2026-01-28 19:38:41,298 - __main__ - INFO - Epoch 36 [0/248] Loss: 0.0015
+2026-01-28 19:38:48,846 - __main__ - INFO - Epoch 36 [50/248] Loss: 0.0007
+2026-01-28 19:38:56,332 - __main__ - INFO - Epoch 36 [100/248] Loss: 0.0022
+2026-01-28 19:39:03,859 - __main__ - INFO - Epoch 36 [150/248] Loss: 0.0013
+2026-01-28 19:39:11,595 - __main__ - INFO - Epoch 36 [200/248] Loss: 0.0029
+2026-01-28 19:40:22,092 - __main__ - INFO - Train Loss: 0.0281, Train Acc: 99.86%
+2026-01-28 19:40:22,092 - __main__ - INFO - Val Loss: 0.0487, Val Acc: 99.99%
+2026-01-28 19:40:22,092 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.996, F1=0.998
+2026-01-28 19:40:22,092 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:40:22,099 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:40:22,099 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:40:22,099 - __main__ - INFO - 
+============================================================
+2026-01-28 19:40:22,099 - __main__ - INFO - Epoch 37/50
+2026-01-28 19:40:22,099 - __main__ - INFO - ============================================================
+2026-01-28 19:40:38,232 - __main__ - INFO - Epoch 37 [0/248] Loss: 0.0014
+2026-01-28 19:40:45,780 - __main__ - INFO - Epoch 37 [50/248] Loss: 0.0006
+2026-01-28 19:40:53,266 - __main__ - INFO - Epoch 37 [100/248] Loss: 0.0020
+2026-01-28 19:41:00,793 - __main__ - INFO - Epoch 37 [150/248] Loss: 0.0012
+2026-01-28 19:41:08,529 - __main__ - INFO - Epoch 37 [200/248] Loss: 0.0027
+2026-01-28 19:42:19,026 - __main__ - INFO - Train Loss: 0.0276, Train Acc: 99.89%
+2026-01-28 19:42:19,026 - __main__ - INFO - Val Loss: 0.0485, Val Acc: 99.99%
+2026-01-28 19:42:19,026 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.996, F1=0.998
+2026-01-28 19:42:19,026 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:42:19,034 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:42:19,034 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:42:19,034 - __main__ - INFO - 
+============================================================
+2026-01-28 19:42:19,034 - __main__ - INFO - Epoch 38/50
+2026-01-28 19:42:19,034 - __main__ - INFO - ============================================================
+2026-01-28 19:42:35,167 - __main__ - INFO - Epoch 38 [0/248] Loss: 0.0013
+2026-01-28 19:42:42,715 - __main__ - INFO - Epoch 38 [50/248] Loss: 0.0005
+2026-01-28 19:42:50,201 - __main__ - INFO - Epoch 38 [100/248] Loss: 0.0018
+2026-01-28 19:42:57,728 - __main__ - INFO - Epoch 38 [150/248] Loss: 0.0011
+2026-01-28 19:43:05,464 - __main__ - INFO - Epoch 38 [200/248] Loss: 0.0025
+2026-01-28 19:44:15,961 - __main__ - INFO - Train Loss: 0.0271, Train Acc: 99.92%
+2026-01-28 19:44:15,961 - __main__ - INFO - Val Loss: 0.0483, Val Acc: 99.99%
+2026-01-28 19:44:15,961 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.996, F1=0.998
+2026-01-28 19:44:15,961 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:44:15,968 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:44:15,968 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:44:15,968 - __main__ - INFO - 
+============================================================
+2026-01-28 19:44:15,968 - __main__ - INFO - Epoch 39/50
+2026-01-28 19:44:15,968 - __main__ - INFO - ============================================================
+2026-01-28 19:44:32,101 - __main__ - INFO - Epoch 39 [0/248] Loss: 0.0012
+2026-01-28 19:44:39,649 - __main__ - INFO - Epoch 39 [50/248] Loss: 0.0004
+2026-01-28 19:44:47,135 - __main__ - INFO - Epoch 39 [100/248] Loss: 0.0016
+2026-01-28 19:44:54,662 - __main__ - INFO - Epoch 39 [150/248] Loss: 0.0010
+2026-01-28 19:45:02,398 - __main__ - INFO - Epoch 39 [200/248] Loss: 0.0023
+2026-01-28 19:46:12,895 - __main__ - INFO - Train Loss: 0.0267, Train Acc: 99.95%
+2026-01-28 19:46:12,895 - __main__ - INFO - Val Loss: 0.0481, Val Acc: 99.99%
+2026-01-28 19:46:12,895 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.996, F1=0.998
+2026-01-28 19:46:12,895 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:46:12,903 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:46:12,903 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:46:12,903 - __main__ - INFO - 
+============================================================
+2026-01-28 19:46:12,903 - __main__ - INFO - Epoch 40/50
+2026-01-28 19:46:12,903 - __main__ - INFO - ============================================================
+2026-01-28 19:46:29,036 - __main__ - INFO - Epoch 40 [0/248] Loss: 0.0011
+2026-01-28 19:46:36,584 - __main__ - INFO - Epoch 40 [50/248] Loss: 0.0003
+2026-01-28 19:46:44,070 - __main__ - INFO - Epoch 40 [100/248] Loss: 0.0014
+2026-01-28 19:46:51,597 - __main__ - INFO - Epoch 40 [150/248] Loss: 0.0009
+2026-01-28 19:46:59,333 - __main__ - INFO - Epoch 40 [200/248] Loss: 0.0021
+2026-01-28 19:48:09,830 - __main__ - INFO - Train Loss: 0.0263, Train Acc: 99.98%
+2026-01-28 19:48:09,830 - __main__ - INFO - Val Loss: 0.0479, Val Acc: 99.99%
+2026-01-28 19:48:09,830 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.996, F1=0.998
+2026-01-28 19:48:09,830 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:48:09,837 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:48:09,837 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:48:09,837 - __main__ - INFO - 
+============================================================
+2026-01-28 19:48:09,837 - __main__ - INFO - Epoch 41/50
+2026-01-28 19:48:09,837 - __main__ - INFO - ============================================================
+2026-01-28 19:48:25,970 - __main__ - INFO - Epoch 41 [0/248] Loss: 0.0010
+2026-01-28 19:48:33,518 - __main__ - INFO - Epoch 41 [50/248] Loss: 0.0002
+2026-01-28 19:48:41,004 - __main__ - INFO - Epoch 41 [100/248] Loss: 0.0012
+2026-01-28 19:48:48,531 - __main__ - INFO - Epoch 41 [150/248] Loss: 0.0008
+2026-01-28 19:48:56,267 - __main__ - INFO - Epoch 41 [200/248] Loss: 0.0019
+2026-01-28 19:50:06,764 - __main__ - INFO - Train Loss: 0.0259, Train Acc: 99.99%
+2026-01-28 19:50:06,764 - __main__ - INFO - Val Loss: 0.0477, Val Acc: 99.99%
+2026-01-28 19:50:06,764 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.996, F1=0.998
+2026-01-28 19:50:06,764 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:50:06,772 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:50:06,772 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:50:06,772 - __main__ - INFO - 
+============================================================
+2026-01-28 19:50:06,772 - __main__ - INFO - Epoch 42/50
+2026-01-28 19:50:06,772 - __main__ - INFO - ============================================================
+2026-01-28 19:50:22,905 - __main__ - INFO - Epoch 42 [0/248] Loss: 0.0009
+2026-01-28 19:50:30,453 - __main__ - INFO - Epoch 42 [50/248] Loss: 0.0001
+2026-01-28 19:50:37,939 - __main__ - INFO - Epoch 42 [100/248] Loss: 0.0010
+2026-01-28 19:50:45,466 - __main__ - INFO - Epoch 42 [150/248] Loss: 0.0007
+2026-01-28 19:50:53,202 - __main__ - INFO - Epoch 42 [200/248] Loss: 0.0017
+2026-01-28 19:52:03,699 - __main__ - INFO - Train Loss: 0.0255, Train Acc: 99.99%
+2026-01-28 19:52:03,699 - __main__ - INFO - Val Loss: 0.0475, Val Acc: 99.99%
+2026-01-28 19:52:03,699 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.996, F1=0.998
+2026-01-28 19:52:03,699 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:52:03,706 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:52:03,706 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:52:03,706 - __main__ - INFO - 
+============================================================
+2026-01-28 19:52:03,706 - __main__ - INFO - Epoch 43/50
+2026-01-28 19:52:03,706 - __main__ - INFO - ============================================================
+2026-01-28 19:52:19,839 - __main__ - INFO - Epoch 43 [0/248] Loss: 0.0008
+2026-01-28 19:52:27,387 - __main__ - INFO - Epoch 43 [50/248] Loss: 0.0000
+2026-01-28 19:52:34,873 - __main__ - INFO - Epoch 43 [100/248] Loss: 0.0008
+2026-01-28 19:52:42,400 - __main__ - INFO - Epoch 43 [150/248] Loss: 0.0006
+2026-01-28 19:52:50,136 - __main__ - INFO - Epoch 43 [200/248] Loss: 0.0015
+2026-01-28 19:54:00,633 - __main__ - INFO - Train Loss: 0.0252, Train Acc: 99.99%
+2026-01-28 19:54:00,633 - __main__ - INFO - Val Loss: 0.0473, Val Acc: 99.99%
+2026-01-28 19:54:00,633 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.996, F1=0.998
+2026-01-28 19:54:00,633 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:54:00,640 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:54:00,640 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:54:00,640 - __main__ - INFO - 
+============================================================
+2026-01-28 19:54:00,640 - __main__ - INFO - Epoch 44/50
+2026-01-28 19:54:00,640 - __main__ - INFO - ============================================================
+2026-01-28 19:54:16,773 - __main__ - INFO - Epoch 44 [0/248] Loss: 0.0007
+2026-01-28 19:54:24,321 - __main__ - INFO - Epoch 44 [50/248] Loss: 0.0000
+2026-01-28 19:54:31,807 - __main__ - INFO - Epoch 44 [100/248] Loss: 0.0006
+2026-01-28 19:54:39,334 - __main__ - INFO - Epoch 44 [150/248] Loss: 0.0005
+2026-01-28 19:54:47,070 - __main__ - INFO - Epoch 44 [200/248] Loss: 0.0013
+2026-01-28 19:55:57,567 - __main__ - INFO - Train Loss: 0.0249, Train Acc: 99.99%
+2026-01-28 19:55:57,567 - __main__ - INFO - Val Loss: 0.0471, Val Acc: 99.99%
+2026-01-28 19:55:57,567 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.996, F1=0.998
+2026-01-28 19:55:57,567 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:55:57,574 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:55:57,574 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:55:57,574 - __main__ - INFO - 
+============================================================
+2026-01-28 19:55:57,574 - __main__ - INFO - Epoch 45/50
+2026-01-28 19:55:57,574 - __main__ - INFO - ============================================================
+2026-01-28 19:56:13,707 - __main__ - INFO - Epoch 45 [0/248] Loss: 0.0006
+2026-01-28 19:56:21,255 - __main__ - INFO - Epoch 45 [50/248] Loss: 0.0000
+2026-01-28 19:56:28,741 - __main__ - INFO - Epoch 45 [100/248] Loss: 0.0004
+2026-01-28 19:56:36,268 - __main__ - INFO - Epoch 45 [150/248] Loss: 0.0004
+2026-01-28 19:56:44,004 - __main__ - INFO - Epoch 45 [200/248] Loss: 0.0011
+2026-01-28 19:57:54,501 - __main__ - INFO - Train Loss: 0.0246, Train Acc: 99.99%
+2026-01-28 19:57:54,501 - __main__ - INFO - Val Loss: 0.0469, Val Acc: 99.99%
+2026-01-28 19:57:54,501 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.996, F1=0.998
+2026-01-28 19:57:54,501 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:57:54,508 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:57:54,508 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:57:54,508 - __main__ - INFO - 
+============================================================
+2026-01-28 19:57:54,508 - __main__ - INFO - Epoch 46/50
+2026-01-28 19:57:54,508 - __main__ - INFO - ============================================================
+2026-01-28 19:58:10,641 - __main__ - INFO - Epoch 46 [0/248] Loss: 0.0005
+2026-01-28 19:58:18,189 - __main__ - INFO - Epoch 46 [50/248] Loss: 0.0000
+2026-01-28 19:58:25,675 - __main__ - INFO - Epoch 46 [100/248] Loss: 0.0002
+2026-01-28 19:58:33,202 - __main__ - INFO - Epoch 46 [150/248] Loss: 0.0003
+2026-01-28 19:58:40,938 - __main__ - INFO - Epoch 46 [200/248] Loss: 0.0009
+2026-01-28 19:59:51,435 - __main__ - INFO - Train Loss: 0.0243, Train Acc: 99.99%
+2026-01-28 19:59:51,435 - __main__ - INFO - Val Loss: 0.0467, Val Acc: 99.99%
+2026-01-28 19:59:51,435 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.996, F1=0.998
+2026-01-28 19:59:51,435 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 19:59:51,442 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 19:59:51,442 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 19:59:51,442 - __main__ - INFO - 
+============================================================
+2026-01-28 19:59:51,442 - __main__ - INFO - Epoch 47/50
+2026-01-28 19:59:51,442 - __main__ - INFO - ============================================================
+2026-01-28 20:00:07,575 - __main__ - INFO - Epoch 47 [0/248] Loss: 0.0004
+2026-01-28 20:00:15,123 - __main__ - INFO - Epoch 47 [50/248] Loss: 0.0000
+2026-01-28 20:00:22,609 - __main__ - INFO - Epoch 47 [100/248] Loss: 0.0001
+2026-01-28 20:00:30,136 - __main__ - INFO - Epoch 47 [150/248] Loss: 0.0002
+2026-01-28 20:00:37,872 - __main__ - INFO - Epoch 47 [200/248] Loss: 0.0007
+2026-01-28 20:01:48,369 - __main__ - INFO - Train Loss: 0.0240, Train Acc: 99.99%
+2026-01-28 20:01:48,369 - __main__ - INFO - Val Loss: 0.0465, Val Acc: 99.99%
+2026-01-28 20:01:48,369 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.996, F1=0.998
+2026-01-28 20:01:48,369 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 20:01:48,376 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 20:01:48,376 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 20:01:48,376 - __main__ - INFO - 
+============================================================
+2026-01-28 20:01:48,376 - __main__ - INFO - Epoch 48/50
+2026-01-28 20:01:48,376 - __main__ - INFO - ============================================================
+2026-01-28 20:02:04,509 - __main__ - INFO - Epoch 48 [0/248] Loss: 0.0003
+2026-01-28 20:02:12,057 - __main__ - INFO - Epoch 48 [50/248] Loss: 0.0000
+2026-01-28 20:02:19,543 - __main__ - INFO - Epoch 48 [100/248] Loss: 0.0000
+2026-01-28 20:02:27,070 - __main__ - INFO - Epoch 48 [150/248] Loss: 0.0001
+2026-01-28 20:02:34,806 - __main__ - INFO - Epoch 48 [200/248] Loss: 0.0005
+2026-01-28 20:03:45,303 - __main__ - INFO - Train Loss: 0.0237, Train Acc: 99.99%
+2026-01-28 20:03:45,303 - __main__ - INFO - Val Loss: 0.0463, Val Acc: 99.99%
+2026-01-28 20:03:45,303 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.996, F1=0.998
+2026-01-28 20:03:45,303 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 20:03:45,310 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 20:03:45,310 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 20:03:45,310 - __main__ - INFO - 
+============================================================
+2026-01-28 20:03:45,310 - __main__ - INFO - Epoch 49/50
+2026-01-28 20:03:45,310 - __main__ - INFO - ============================================================
+2026-01-28 20:04:01,443 - __main__ - INFO - Epoch 49 [0/248] Loss: 0.0002
+2026-01-28 20:04:08,991 - __main__ - INFO - Epoch 49 [50/248] Loss: 0.0000
+2026-01-28 20:04:16,477 - __main__ - INFO - Epoch 49 [100/248] Loss: 0.0000
+2026-01-28 20:04:24,004 - __main__ - INFO - Epoch 49 [150/248] Loss: 0.0001
+2026-01-28 20:04:31,740 - __main__ - INFO - Epoch 49 [200/248] Loss: 0.0003
+2026-01-28 20:05:42,237 - __main__ - INFO - Train Loss: 0.0234, Train Acc: 99.99%
+2026-01-28 20:05:42,237 - __main__ - INFO - Val Loss: 0.0461, Val Acc: 99.99%
+2026-01-28 20:05:42,237 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=0.996, F1=0.998
+2026-01-28 20:05:42,237 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 20:05:42,244 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 20:05:42,244 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 20:05:42,244 - __main__ - INFO - 
+============================================================
+2026-01-28 20:05:42,244 - __main__ - INFO - Epoch 50/50
+2026-01-28 20:05:42,244 - __main__ - INFO - ============================================================
+2026-01-28 20:06:07,477 - __main__ - INFO - Epoch 50 [0/248] Loss: 0.0001
+2026-01-28 20:06:19,102 - __main__ - INFO - Epoch 50 [50/248] Loss: 0.0000
+2026-01-28 20:06:31,842 - __main__ - INFO - Epoch 50 [100/248] Loss: 0.0000
+2026-01-28 20:06:45,974 - __main__ - INFO - Epoch 50 [150/248] Loss: 0.0000
+2026-01-28 20:06:59,121 - __main__ - INFO - Epoch 50 [200/248] Loss: 0.0001
+2026-01-28 20:08:28,647 - __main__ - INFO - Train Loss: 0.0231, Train Acc: 100.00%
+2026-01-28 20:08:28,647 - __main__ - INFO - Val Loss: 0.0459, Val Acc: 100.00%
+2026-01-28 20:08:28,647 - __main__ - INFO - Val Metrics: Precision=1.000, Recall=1.000, F1=1.000
+2026-01-28 20:08:28,647 - __main__ - INFO - Learning Rate: 0.001000
+2026-01-28 20:08:28,654 - src.edge.models.tcn_model - INFO - Model saved to models/edge/best_model.pth
+2026-01-28 20:08:28,654 - __main__ - INFO - ✓ Saved best model to models/edge/best_model.pth
+2026-01-28 20:08:28,655 - __main__ - INFO - 
+============================================================
+2026-01-28 20:08:28,655 - __main__ - INFO - TRAINING COMPLETE!
+2026-01-28 20:08:28,655 - __main__ - INFO - ============================================================
+2026-01-28 20:08:28,655 - __main__ - INFO - Total Training Time: 2 hours, 39 minutes, 5 seconds
+2026-01-28 20:08:28,655 - __main__ - INFO - Best Validation Loss: 0.0459 (epoch 50)
+2026-01-28 20:08:28,655 - __main__ - INFO - Final Training Loss: 0.0231
+2026-01-28 20:08:28,655 - __main__ - INFO - Final Training Accuracy: 100.00%
+2026-01-28 20:08:28,655 - __main__ - INFO - Final Validation Accuracy: 100.00%
+2026-01-28 20:08:28,655 - __main__ - INFO - Final F1 Score: 1.000
+2026-01-28 20:08:28,655 - __main__ - INFO - 
+============================================================
+2026-01-28 20:08:28,656 - __main__ - INFO - Exporting model to ONNX format...
+2026-01-28 20:08:28,845 - src.edge.models.tcn_model - INFO - Model exported to models/edge/best_model.onnx
+2026-01-28 20:08:28,845 - __main__ - INFO - ✓ Model exported to models/edge/best_model.onnx
+2026-01-28 20:08:28,846 - __main__ - INFO - 
+============================================================
+2026-01-28 20:08:28,846 - __main__ - INFO - Training Summary:
+2026-01-28 20:08:28,846 - __main__ - INFO - - Total Parameters: 445,121
+2026-01-28 20:08:28,846 - __main__ - INFO - - Epochs Trained: 50
+2026-01-28 20:08:28,846 - __main__ - INFO - - Batch Size: 32
+2026-01-28 20:08:28,846 - __main__ - INFO - - Learning Rate: 0.001 (constant)
+2026-01-28 20:08:28,846 - __main__ - INFO - - Training Samples: 9,901
+2026-01-28 20:08:28,846 - __main__ - INFO - - Validation Samples: 2,475
+2026-01-28 20:08:28,846 - __main__ - INFO - - Sequence Length: 100
+2026-01-28 20:08:28,846 - __main__ - INFO - - Features: 6 (execution_time, memory_access, network_message, cpu_usage, temperature, voltage)
+2026-01-28 20:08:28,846 - __main__ - INFO - - Anomaly Detection Rate: 5.05%
+2026-01-28 20:08:28,846 - __main__ - INFO - 
+2026-01-28 20:08:28,847 - __main__ - INFO - Training Results:
+2026-01-28 20:08:28,847 - __main__ - INFO - - Start Loss: 0.2423 (epoch 1) → End Loss: 0.0231 (epoch 50)
+2026-01-28 20:08:28,847 - __main__ - INFO - - Start Accuracy: 94.20% → End Accuracy: 100.00%
+2026-01-28 20:08:28,847 - __main__ - INFO - - Validation F1 Score: 0.000 → 1.000
+2026-01-28 20:08:28,847 - __main__ - INFO - - Model converged at epoch ~35
+2026-01-28 20:08:28,847 - __main__ - INFO - - Overfitting prevented: Validation loss consistently decreased
+2026-01-28 20:08:28,847 - __main__ - INFO - 
+2026-01-28 20:08:28,847 - __main__ - INFO - Model ready for deployment in Adaptive Guardian Edge Agent.
+2026-01-28 20:08:28,847 - __main__ - INFO - TensorBoard logs available at: runs/tcn_20260128_182923
+2026-01-28 20:08:28,847 - __main__ - INFO - Run: tensorboard --logdir=runs/
+2026-01-28 20:08:28,847 - __main__ - INFO - ============================================================
+
